@@ -3,6 +3,8 @@
 import { cn } from '@/lib/utils';
 import { motion, useReducedMotion } from 'framer-motion';
 
+import { AnimatedStat } from './AnimatedStat';
+
 export type InnovationSectionProps = {
   className?: string;
   videoSrc?: string;
@@ -27,9 +29,9 @@ export const InnovationSection = ({
   ];
 
   const stats = [
-    { number: '150+', label: 'team members' },
-    { number: '500+', label: 'completed projects' },
-    { number: '19 years', label: 'in the business' },
+    { number: 150, suffix: '+', label: 'team members' },
+    { number: 500, suffix: '+', label: 'completed projects' },
+    { number: 19, suffix: ' Years', label: 'in the business' },
   ];
 
   return (
@@ -82,23 +84,13 @@ export const InnovationSection = ({
             {/* Statistics */}
             <div className="grid grid-cols-3 gap-8 lg:gap-12">
               {stats.map((stat, index) => (
-                <motion.div
+                <AnimatedStat
                   key={stat.label}
-                  initial={reduce ? false : { opacity: 0, y: 20 }}
-                  whileInView={reduce ? {} : { opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: reduce ? 0 : index * 0.1,
-                    ease: 'easeOut',
-                  }}
-                  className="space-y-3 lg:space-y-4"
-                >
-                  <div className="stat-number text-gray-900">{stat.number}</div>
-                  <div className="text-base text-gray-600 leading-relaxed md:text-lg">
-                    {stat.label}
-                  </div>
-                </motion.div>
+                  number={stat.number}
+                  suffix={stat.suffix}
+                  label={stat.label}
+                  index={index}
+                />
               ))}
             </div>
           </motion.div>
