@@ -119,4 +119,13 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Custom stat number styling */
+  .stat-number {
+    font-family: 'TT Norms Web', Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 450;
+    text-transform: none;
+    line-height: 1.15;
+  }
 }
