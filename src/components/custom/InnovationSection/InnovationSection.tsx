@@ -49,7 +49,7 @@ export const InnovationSection = ({
             whileInView={reduce ? {} : { opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="space-y-12 lg:space-y-16 lg:col-span-3"
+            className="space-y-16 lg:space-y-20 lg:col-span-3"
           >
             {/* Main heading */}
             <h2 className="text-4xl font-light leading-tight md:text-5xl lg:text-5xl xl:text-5xl">
@@ -80,7 +80,7 @@ export const InnovationSection = ({
             </div>
 
             {/* Statistics */}
-            <div className="grid grid-cols-3 gap-8 pt-12 lg:gap-8 lg:pt-16">
+            <div className="grid grid-cols-3 gap-8 lg:gap-12">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
