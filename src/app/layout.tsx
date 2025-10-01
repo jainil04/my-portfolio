@@ -2,6 +2,7 @@ import { HeroSection } from '@/components/custom/HeroSection';
 import { InnovationSection } from '@/components/custom/InnovationSection';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import '../styles/target-cursor.css';
 import './globals.css';
 
 const geistSans = Geist({

@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils';
 import { motion, useReducedMotion } from 'framer-motion';
 
+import { TargetCursor } from '../TargetCursor';
 import { AnimatedStat } from './AnimatedStat';
 
 export type InnovationSectionProps = {
@@ -74,12 +75,13 @@ export const InnovationSection = ({
                     delay: reduce ? 0 : index * 0.05,
                     ease: 'easeOut',
                   }}
-                  className="rounded-full border border-gray-300 px-6 py-3 text-sm text-gray-600 transition-colors hover:border-gray-900 hover:text-gray-900 lg:px-8 lg:py-4 lg:text-base"
+                  className="cursor-target rounded-full border border-gray-300 px-6 py-3 text-sm text-gray-600 transition-colors hover:border-gray-900 hover:text-gray-900 lg:px-8 lg:py-4 lg:text-base"
                 >
                   {tag}
                 </motion.span>
               ))}
             </div>
+            <TargetCursor targetSelector="#InnovationSection .cursor-target" />
 
             {/* Statistics */}
             <div className="grid grid-cols-3 gap-8 lg:gap-12">
